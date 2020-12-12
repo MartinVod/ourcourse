@@ -1,0 +1,316 @@
+/* create body element as relative position for scrollspy to work  and font family to the whole webpage */
+body{
+    font-family: 'Kufam', cursive;
+    position: relative;
+}
+
+/* video: set it to the background and make it fixed */
+/* make sure it appears behing all elements */
+/* make it spread across whole webpage */
+video#bgvideo{
+    position: fixed;
+    max-height: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    z-index: -100;
+}
+
+/*Video does not work in small devices:
+-Hide the video and set picture as background (use media queries)
+-make it spread accross the whole webpage*/
+/* for small devices we will choose a picture instead of the video */
+/* @media (max-width:768px){
+    body{
+        background: url(https://static.pexels.com/photos/9149/pexels-photo.jpeg) center center fixed;
+        background-size: cover;
+    }
+    #bgvideo{
+        display: none;   
+    }
+} */
+
+/* style home sections and the elements inside (jumbotron) */
+#home{
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    padding-top: 10%;
+    text-shadow: 3px 1px teal;
+}
+
+#home h1{
+    margin-bottom: 30px;
+}
+
+#home h2{
+    margin-bottom: 50px;
+}
+
+#home .btn{
+    background-color: rgb(18, 66, 129);
+    color: white;
+    font-size: 20px;
+    padding: 8px 20px;
+    border-radius: 8px;
+}
+
+#home .btn:hover{
+    background-color: rgba(18, 66, 129,0.5);
+}
+
+/* style about sections -  */
+/* add padding top so that the navbar is active before the carusel hits the top border of the page */
+/* limit its width in big devices to 1000px */
+/* make headings bold and set the dimensions of pictures */
+
+#about{
+    color: white;
+    text-align: center;
+    padding-top: 150px;
+    text-shadow: 3px 1px teal;
+}
+
+.container{
+    max-width: 1000px;
+}
+#about h2{
+    font-weight: bold;
+}
+
+#about p{
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.aboutImg{
+    height: 120px;
+}
+ 
+/* style the promise (carusel) */
+/* add padding top, and set the width of carusel and center it` */
+/* move carusel captions under the picture */
+#promise{
+    padding-top: 150px;
+}
+
+#promiseCarousel{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  /* height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid black; */
+  background-image: none; 
+}
+
+.carousel-control-next-icon:after
+{
+   content: '>';
+  font-size: 55px; 
+  color: #00b6ff;
+  font-weight: bolder;
+  text-shadow: 3px 1px teal;
+}
+
+.carousel-control-prev-icon:after {
+   content: '<';
+  font-size: 55px; 
+  color: #00b6ff;
+  font-weight: bolder;
+  text-shadow: 3px 1px teal;
+}
+
+.carousel-inner .carousel-item img{
+    height: 400px;
+    margin: 0 auto;
+    box-shadow: 5px 0px 10px white;
+}
+
+.carousel-caption{
+    /* moving the caption below the carousel */
+     position: relative;
+    left: auto;
+    right: auto; 
+    color: white;
+    padding-top: 50px;
+    text-shadow: 3px 1px teal;
+}
+
+  /* style thr pictusres and nav-brands for different screen size */
+  @media (max-width:768px){
+    .carousel-inner .carousel-item img{
+      height: 300px;
+    }
+
+    .carousel-inner h2{
+      font-size: 23px;
+    }
+  }
+
+  @media (max-width:400px){
+    .carousel-inner .carousel-item img{
+      height: 200px;
+    }
+
+    .carousel-inner h2{
+      font-size: 17px;
+    }
+
+    .navbar-custom .navbar-brand{
+      font-size: 12px;
+    }
+  }
+
+/* style navbar */
+#topMenu{
+    padding: 0px 0px !important;
+}
+
+.nav-link{
+    padding: 15px 25px !important;
+}
+
+.navbar-custom {
+    background-color: #003752;
+    border-color: #002131;
+    background-image: -webkit-gradient(linear, left 0%, left 100%, from(#005985), to(#003752));
+    background-image: -webkit-linear-gradient(top, #005985, 0%, #003752, 100%);
+    background-image: -moz-linear-gradient(top, #005985 0%, #003752 100%);
+    background-image: linear-gradient(to bottom, #005985 0%, #003752 100%);
+    background-repeat: repeat-x;
+    /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff005985', endColorstr='#ff003752', GradientType=0); */
+  }
+  .navbar-custom .navbar-brand {
+    color: #ffffff;
+  }
+  .navbar-custom .navbar-brand:hover,
+  .navbar-custom .navbar-brand:focus {
+    color: #e6e6e6;
+    background-color: transparent;
+  }
+  .navbar-custom .navbar-text {
+    color: #ffffff;
+  }
+  .navbar-custom .navbar-nav > li:last-child > a {
+    border-right: 1px solid #002131;
+  }
+  .nav-link {
+    color: #ffffff;
+    border-left: 1px solid #002131;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus {
+    color: #00b6ff;
+    background-color: transparent;
+  }
+
+  .navbar-custom .navbar-nav > .active > a,
+  .navbar-custom .navbar-nav > .active > a:hover,
+  .navbar-custom .navbar-nav > .active > a:focus {
+    color: #00b6ff;
+    background-color: #002131;
+    background-image:  gradient(linear, left 0%, left 100%, from(#002131), to(#004364));
+    background-image: -webkit-linear-gradient(top, #002131, 0%, #004364, 100%);
+    background-image: -moz-linear-gradient(top, #002131 0%, #004364 100%);
+    background-image: linear-gradient(to bottom, #002131 0%, #004364 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff002131', endColorstr='#ff004364', GradientType=0);
+  }
+
+  
+  .navbar-custom .navbar-nav > .disabled > a,
+  .navbar-custom .navbar-nav > .disabled > a:hover,
+  .navbar-custom .navbar-nav > .disabled > a:focus {
+    color: #cccccc;
+    background-color: transparent;
+  }
+  .navbar-custom .navbar-toggler {
+    border-color: #dddddd;
+  }
+  .navbar-custom .navbar-toggler:hover,
+  .navbar-custom .navbar-toggler:focus {
+    background-color: #dddddd;
+  }
+  .navbar-custom .navbar-toggler .icon-bar {
+    background-color: #cccccc;
+  }
+  .navbar-custom .navbar-collapse,
+  .navbar-custom .navbar-form {
+    border-color: #001f2e;
+  }
+  .navbar-custom .navbar-nav > .dropdown > a:hover .caret,
+  .navbar-custom .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: #00b6ff;
+    border-bottom-color: #00b6ff;
+  }
+  .navbar-custom .navbar-nav > .open > a,
+  .navbar-custom .navbar-nav > .open > a:hover,
+  .navbar-custom .navbar-nav > .open > a:focus {
+    background-color: #002131;
+    color: #00b6ff;
+  }
+  .navbar-custom .navbar-nav > .open > a .caret,
+  .navbar-custom .navbar-nav > .open > a:hover .caret,
+  .navbar-custom .navbar-nav > .open > a:focus .caret {
+    border-top-color: #00b6ff;
+    border-bottom-color: #00b6ff;
+  }
+  .navbar-custom .navbar-nav > .dropdown > a .caret {
+    border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
+  }
+  @media (max-width: 767) {
+    .navbar-custom .navbar-nav .open .dropdown-menu > li > a {
+      color: #ffffff;
+    }
+    .navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus {
+      color: #00b6ff;
+      background-color: transparent;
+    }
+    .navbar-custom .navbar-nav .open .dropdown-menu > .active > a,
+    .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:focus {
+      color: #00b6ff;
+      background-color: #002131;
+    }
+    .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a,
+    .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+    .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+      color: #cccccc;
+      background-color: transparent;
+    }
+  }
+  .navbar-custom .nav-link {
+    color: #ffffff;
+  }
+  .navbar-custom .nav-link:hover {
+    color: #00b6ff;
+  }
+
+  .navbar-toggler-icon{
+      text-align: center;
+      margin-top: 5px;
+      color: white;
+  }
+
+
+
+
+/* style the footer */
+.footer{
+background-color: rgba(29,167,179,0.1);
+color: white;
+padding: 10px 0;
+margin-top: 150px;
+font-size: 15px;
+}
